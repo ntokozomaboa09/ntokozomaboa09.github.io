@@ -85,7 +85,7 @@ header {
 }
 
 .logo-image {
-    height: 50px;
+    height: 60px;
     width: auto;
     margin-right: 15px;
 }
@@ -143,12 +143,13 @@ nav a.active::after {
 
 /* Hero Section */
 .hero {
-    background-color: #f5f5f5;
-    color: #000000;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
     text-align: center;
     padding: 180px 20px 100px;
     margin-top: 80px;
-    border-bottom: 1px solid #e0e0e0;
 }
 
 .hero h1 {
@@ -165,7 +166,7 @@ nav a.active::after {
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    color: #666;
+    opacity: 0.9;
 }
 
 .hero-buttons {
@@ -324,7 +325,9 @@ nav a.active::after {
 
 /* Page Banner */
 .page-banner {
-    background-color: #000000;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
     color: white;
     text-align: center;
     padding: 150px 20px 80px;
@@ -720,6 +723,15 @@ nav a.active::after {
     margin-bottom: 5px;
 }
 
+.detail-content a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.detail-content a:hover {
+    text-decoration: underline;
+}
+
 .detail-content small {
     color: #666;
     font-size: 0.9rem;
@@ -751,6 +763,15 @@ nav a.active::after {
     color: #000000;
 }
 
+.emergency-contact strong a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.emergency-contact strong a:hover {
+    text-decoration: underline;
+}
+
 /* Form Styles */
 .form-group {
     margin-bottom: 20px;
@@ -773,6 +794,13 @@ nav a.active::after {
     font-size: 16px;
     font-family: inherit;
     background-color: #f9f9f9;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #000000;
 }
 
 .form-group textarea {
