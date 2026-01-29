@@ -104,24 +104,6 @@ if (contactForm) {
     });
 }
 
-// Phone Number Click to Call
-const phoneNumbers = document.querySelectorAll('a[href^="tel:"]');
-phoneNumbers.forEach(phone => {
-    phone.addEventListener('click', function(e) {
-        console.log('Phone number clicked:', this.href);
-        // Optional: Add analytics tracking here
-    });
-});
-
-// Email Click to Email
-const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
-emailLinks.forEach(email => {
-    email.addEventListener('click', function(e) {
-        console.log('Email link clicked:', this.href);
-        // Optional: Add analytics tracking here
-    });
-});
-
 // Smooth Scrolling for Anchor Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -201,23 +183,38 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Sarah M Projects website loaded successfully');
     
     // Set current year in footer
-    const yearElement = document.querySelector('.copyright');
-    if (yearElement) {
+    const yearElements = document.querySelectorAll('#currentYear');
+    yearElements.forEach(element => {
         const currentYear = new Date().getFullYear();
-        const text = yearElement.innerHTML;
-        yearElement.innerHTML = text.replace('2026', currentYear);
-    }
+        element.textContent = currentYear;
+    });
     
     // Update active nav on page load
     updateActiveNav();
     
     // Highlight current page in navigation
-    const currentPage = window.location.pathname.split('/').pop();
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('#navMenu a');
     navLinks.forEach(link => {
         const linkHref = link.getAttribute('href');
         if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
             link.classList.add('active');
         }
+    });
+});
+
+// Phone Number Click Handler
+const phoneNumbers = document.querySelectorAll('a[href^="tel:"]');
+phoneNumbers.forEach(phone => {
+    phone.addEventListener('click', function(e) {
+        console.log('Phone number clicked:', this.href);
+    });
+});
+
+// Email Click Handler
+const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+emailLinks.forEach(email => {
+    email.addEventListener('click', function(e) {
+        console.log('Email link clicked:', this.href);
     });
 });
