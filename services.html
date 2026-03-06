@@ -8,16 +8,12 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
-        /* Fix for services navigation - stays fixed when scrolling */
+        /* Services Navigation - Only shows at the top */
         .services-nav {
             background-color: white;
             padding: 15px 0;
             border-bottom: 1px solid #e0e0e0;
             border-top: 1px solid #e0e0e0;
-            position: sticky;
-            top: 140px;
-            z-index: 999;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             width: 100%;
         }
         
@@ -52,12 +48,6 @@
             padding: 80px 20px;
             background-color: white;
             border-bottom: 1px solid #e0e0e0;
-            scroll-margin-top: 200px;
-        }
-        
-        /* Make sure the navigation doesn't move */
-        body {
-            overflow-x: hidden;
         }
         
         /* Mobile fixes */
@@ -66,19 +56,10 @@
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
-            
-            .services-nav {
-                top: 160px;
-            }
-            
-            .service-detail {
-                scroll-margin-top: 220px;
-            }
         }
         
         @media (max-width: 768px) {
             .services-nav {
-                top: 160px;
                 padding: 12px 0;
             }
             
@@ -158,7 +139,6 @@
             
             .service-detail {
                 padding: 50px 15px;
-                scroll-margin-top: 240px;
             }
             
             .service-cta {
@@ -185,11 +165,6 @@
         }
         
         @media (max-width: 480px) {
-            .services-nav {
-                top: 180px;
-                padding: 10px 0;
-            }
-            
             .nav-links {
                 gap: 8px;
             }
@@ -214,10 +189,6 @@
             .service-cta h2 {
                 font-size: 1.5rem;
             }
-            
-            .service-detail {
-                scroll-margin-top: 260px;
-            }
         }
         
         /* Smooth scrolling behavior */
@@ -230,14 +201,6 @@
             .nav-link {
                 padding: 6px 12px;
                 font-size: 0.8rem;
-            }
-            
-            .services-nav {
-                top: 200px;
-            }
-            
-            .service-detail {
-                scroll-margin-top: 280px;
             }
         }
     </style>
@@ -277,7 +240,7 @@
         </div>
     </section>
 
-    <!-- Services Navigation - Stays fixed when scrolling -->
+    <!-- Services Navigation - Only shows at the top of the page -->
     <section class="services-nav">
         <div class="container">
             <div class="nav-links">
