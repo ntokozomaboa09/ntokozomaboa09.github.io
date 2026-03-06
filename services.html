@@ -8,13 +8,25 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
-        /* Services Navigation - Only shows at the top */
+        /* Services Navigation - Hidden by default when scrolling */
         .services-nav {
             background-color: white;
             padding: 15px 0;
             border-bottom: 1px solid #e0e0e0;
             border-top: 1px solid #e0e0e0;
             width: 100%;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        /* Class to hide the navigation when scrolling down */
+        .services-nav.hidden {
+            opacity: 0;
+            visibility: hidden;
+            height: 0;
+            padding: 0;
+            margin: 0;
+            border: none;
+            pointer-events: none;
         }
         
         .nav-links {
@@ -195,14 +207,6 @@
         html {
             scroll-behavior: smooth;
         }
-        
-        /* Additional fix for very small screens */
-        @media (max-width: 360px) {
-            .nav-link {
-                padding: 6px 12px;
-                font-size: 0.8rem;
-            }
-        }
     </style>
 </head>
 <body>
@@ -240,8 +244,8 @@
         </div>
     </section>
 
-    <!-- Services Navigation - Only shows at the top of the page -->
-    <section class="services-nav">
+    <!-- Services Navigation - Only visible at the very top -->
+    <section class="services-nav" id="servicesNav">
         <div class="container">
             <div class="nav-links">
                 <a href="#supplies" class="nav-link active">Supplies</a>
@@ -467,5 +471,24 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const servicesNav = document.getElementById('servicesNav');
+            const pageBanner = document.querySelector('.page-banner');
+            
+            if (servicesNav && pageBanner) {
+                const bannerBottom = pageBanner.offsetTop + pageBanner.offsetHeight;
+                
+                window.addEventListener('scroll', function() {
+                    // If scrolled past the banner, hide the navigation
+                    if (window.scrollY > bannerBottom - 100) {
+                        servicesNav.classList.add('hidden');
+                    } else {
+                        servicesNav.classList.remove('hidden');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
