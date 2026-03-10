@@ -1,9 +1,7 @@
-// Mobile Menu Toggle - Optimized for 5 menu items
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const navMenu = document.getElementById('navMenu');
 
 if (mobileMenuBtn && navMenu) {
-    // Single click handler for the menu button
     mobileMenuBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         e.preventDefault();
@@ -20,7 +18,6 @@ if (mobileMenuBtn && navMenu) {
         }
     });
     
-    // Close menu when clicking on a link
     navMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', function() {
             navMenu.classList.remove('show');
@@ -29,7 +26,6 @@ if (mobileMenuBtn && navMenu) {
         });
     });
     
-    // Close menu when clicking outside
     document.addEventListener('click', function(e) {
         if (navMenu.classList.contains('show') && 
             !navMenu.contains(e.target) && 
@@ -40,7 +36,6 @@ if (mobileMenuBtn && navMenu) {
         }
     });
     
-    // Close menu on window resize (if switching to desktop view)
     window.addEventListener('resize', function() {
         if (window.innerWidth > 768 && navMenu.classList.contains('show')) {
             navMenu.classList.remove('show');
@@ -50,7 +45,6 @@ if (mobileMenuBtn && navMenu) {
     });
 }
 
-// Services Navigation - For services.html
 const serviceNavLinks = document.querySelectorAll('.nav-link');
 if (serviceNavLinks.length > 0) {
     serviceNavLinks.forEach(link => {
@@ -64,7 +58,7 @@ if (serviceNavLinks.length > 0) {
                 this.classList.add('active');
                 
                 window.scrollTo({
-                    top: targetElement.offsetTop - 120, // Adjusted for fixed header
+                    top: targetElement.offsetTop - 120,
                     behavior: 'smooth'
                 });
             }
@@ -72,7 +66,6 @@ if (serviceNavLinks.length > 0) {
     });
 }
 
-// Contact Form Handling
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', async function(e) {
@@ -84,7 +77,6 @@ if (contactForm) {
         
         if (!formMessage) return;
         
-        // Basic validation
         let isValid = true;
         const requiredFields = this.querySelectorAll('[required]');
         requiredFields.forEach(field => {
@@ -139,7 +131,6 @@ if (contactForm) {
     });
 }
 
-// Smooth Scrolling for Anchor Links
 document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -158,7 +149,6 @@ document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
     });
 });
 
-// Set active navigation based on current page
 function setActiveNav() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('#navMenu a').forEach(link => {
@@ -170,7 +160,6 @@ function setActiveNav() {
     });
 }
 
-// Update active nav on scroll (for sections)
 function updateActiveNavOnScroll() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('#navMenu a');
@@ -197,29 +186,22 @@ function updateActiveNavOnScroll() {
     });
 }
 
-// Initialize on DOM Load
 document.addEventListener('DOMContentLoaded', function() {
-    // Set current year in footer
     document.querySelectorAll('#currentYear').forEach(element => {
         element.textContent = new Date().getFullYear();
     });
     
-    // Set active navigation
     setActiveNav();
     
-    // Add touch-friendly hover effects for mobile
     if ('ontouchstart' in window) {
         document.body.classList.add('touch-device');
     }
     
-    // Initialize any tooltips or popups
     console.log('Sarah M Projects (Pty) Ltd loaded successfully');
 });
 
-// Scroll event for active nav (only on pages with sections)
 window.addEventListener('scroll', updateActiveNavOnScroll);
 
-// Handle phone and email clicks for analytics (optional)
 document.querySelectorAll('a[href^="tel:"]').forEach(phone => {
     phone.addEventListener('click', function() {
         console.log('Phone call initiated');
@@ -232,7 +214,6 @@ document.querySelectorAll('a[href^="mailto:"]').forEach(email => {
     });
 });
 
-// WhatsApp click handler
 document.querySelectorAll('a[href*="wa.me"]').forEach(whatsapp => {
     whatsapp.addEventListener('click', function() {
         console.log('WhatsApp chat initiated');
