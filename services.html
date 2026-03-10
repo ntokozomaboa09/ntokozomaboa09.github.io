@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
-        /* Services Navigation - Hidden by default when scrolling */
+        /* Services Navigation */
         .services-nav {
             background-color: white;
             padding: 15px 0;
@@ -20,7 +20,6 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         
-        /* Class to hide the navigation when scrolling down */
         .services-nav.hidden {
             opacity: 0;
             visibility: hidden;
@@ -59,7 +58,6 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
-        /* Ensure service sections have proper spacing */
         .service-detail {
             padding: 80px 20px;
             background-color: white;
@@ -71,7 +69,6 @@
             background-color: #f9f9f9;
         }
         
-        /* Enhanced styling for service sections */
         .service-header {
             display: flex;
             align-items: center;
@@ -138,7 +135,6 @@
         
         .feature {
             margin-bottom: 25px;
-            padding-left: 20px;
             border-left: 3px solid #000000;
             background: #f9f9f9;
             padding: 20px;
@@ -282,7 +278,6 @@
             box-shadow: 0 4px 15px rgba(255,255,255,0.2);
         }
         
-        /* Service CTA */
         .service-cta {
             background: linear-gradient(135deg, #000000, #333333);
             color: white;
@@ -325,7 +320,6 @@
             color: #000000;
         }
         
-        /* Mobile fixes */
         @media (max-width: 992px) {
             .service-content {
                 grid-template-columns: 1fr;
@@ -334,7 +328,6 @@
             
             .service-benefits {
                 position: static;
-                top: auto;
             }
             
             .service-header {
@@ -355,7 +348,6 @@
             .nav-link {
                 padding: 10px 20px;
                 font-size: 0.9rem;
-                flex: 0 1 auto;
             }
             
             .service-header {
@@ -375,10 +367,6 @@
                 font-size: 1.8rem;
             }
             
-            .service-title p {
-                font-size: 1rem;
-            }
-            
             .service-description h3 {
                 font-size: 1.3rem;
                 text-align: center;
@@ -390,26 +378,11 @@
             }
             
             .feature {
-                padding-left: 15px;
-                margin-bottom: 20px;
                 padding: 15px;
-            }
-            
-            .feature h4 {
-                font-size: 1.1rem;
-            }
-            
-            .feature p {
-                font-size: 0.95rem;
             }
             
             .rental-grid {
                 grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .rental-item {
-                padding: 15px;
             }
             
             .service-benefits h3 {
@@ -420,19 +393,6 @@
             .service-benefits h3::after {
                 left: 50%;
                 transform: translateX(-50%);
-            }
-            
-            .service-benefits ul {
-                margin-bottom: 20px;
-            }
-            
-            .service-benefits li {
-                font-size: 0.95rem;
-                margin-bottom: 12px;
-            }
-            
-            .cta-box {
-                padding: 20px;
             }
             
             .service-detail {
@@ -448,28 +408,18 @@
                 font-size: 1.8rem;
             }
             
-            .service-cta p {
-                font-size: 1rem;
-            }
-            
             .cta-buttons {
                 flex-direction: column;
-                gap: 10px;
                 align-items: center;
             }
             
             .cta-buttons .btn {
                 width: 100%;
                 max-width: 300px;
-                text-align: center;
             }
         }
         
         @media (max-width: 480px) {
-            .nav-links {
-                gap: 8px;
-            }
-            
             .nav-link {
                 padding: 8px 16px;
                 font-size: 0.85rem;
@@ -485,303 +435,281 @@
                 height: 70px;
             }
             
-            .feature h4 {
-                font-size: 1rem;
-            }
-            
             .service-cta h2 {
                 font-size: 1.5rem;
             }
-            
-            .service-detail {
-                scroll-margin-top: 200px;
-            }
         }
         
-        /* Smooth scrolling behavior */
         html {
             scroll-behavior: smooth;
         }
         
-        /* Fix for anchor links with fixed header */
         :target {
             scroll-margin-top: 200px;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="logo.png" alt="Sarah M Projects (Pty) Ltd Logo" class="logo-image">
-                    <div class="logo-text">
-                        <h1>Sarah M Projects (Pty) Ltd</h1>
-                        <span>Supplies, Logistics & Equipment Rentals</span>
-                    </div>
-                </a>
-            </div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav>
-                <ul id="navMenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html" class="active">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+<header>
+    <div class="container header-container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.png" alt="Sarah M Projects (Pty) Ltd Logo" class="logo-image">
+                <div class="logo-text">
+                    <h1>Sarah M Projects (Pty) Ltd</h1>
+                    <span>Supplies, Logistics & Equipment Rentals</span>
+                </div>
+            </a>
         </div>
-    </header>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+            <ul id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-    <!-- Page Banner -->
-    <section class="page-banner">
-        <div class="container">
-            <h1>Our Services</h1>
-            <p>Comprehensive solutions for mining, construction, and industrial projects</p>
-        </div>
-    </section>
+<section class="page-banner">
+    <div class="container">
+        <h1>Our Services</h1>
+        <p>Comprehensive solutions for mining, construction, and industrial projects</p>
+    </div>
+</section>
 
-    <!-- Services Navigation - Only visible at the very top -->
-    <section class="services-nav" id="servicesNav">
-        <div class="container">
-            <div class="nav-links">
-                <a href="#supplies" class="nav-link active">Supplies</a>
-                <a href="#logistics" class="nav-link">Logistics</a>
-                <a href="#rentals" class="nav-link">Equipment Rentals</a>
-            </div>
+<section class="services-nav" id="servicesNav">
+    <div class="container">
+        <div class="nav-links">
+            <a href="#supplies" class="nav-link active">Supplies</a>
+            <a href="#logistics" class="nav-link">Logistics</a>
+            <a href="#rentals" class="nav-link">Equipment Rentals</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Mining & Industrial Supplies -->
-    <section class="service-detail" id="supplies">
-        <div class="container">
-            <div class="service-header">
-                <div class="service-icon large">
-                    <i class="fas fa-hard-hat"></i>
-                </div>
-                <div class="service-title">
-                    <h2>Mining & Industrial Supplies</h2>
-                    <p>Compliant safety equipment and essential site consumables</p>
-                </div>
+<section class="service-detail" id="supplies">
+    <div class="container">
+        <div class="service-header">
+            <div class="service-icon large">
+                <i class="fas fa-hard-hat"></i>
             </div>
-            <div class="service-content">
-                <div class="service-description">
-                    <h3>Comprehensive Supply Solutions</h3>
-                    <p>We supply a wide range of essential mine and site consumables that meet industry safety standards and operational requirements. All our products are sourced from reputable manufacturers and comply with South African safety regulations.</p>
-                    
-                    <div class="service-features">
-                        <div class="feature">
-                            <h4><i class="fas fa-check-circle"></i> Personal Protective Equipment (PPE)</h4>
-                            <p>Complete range of safety gear including helmets, goggles, ear protection, respirators, and fall protection equipment.</p>
-                        </div>
-                        <div class="feature">
-                            <h4><i class="fas fa-check-circle"></i> Safety Footwear & Workwear</h4>
-                            <p>Industrial-grade gumboots, safety shoes, protective clothing, hi-vis vests, and specialized workwear for various environments.</p>
-                        </div>
-                        <div class="feature">
-                            <h4><i class="fas fa-check-circle"></i> Site Consumables</h4>
-                            <p>Essential supplies including safety signage, barriers, first aid kits, fire extinguishers, and general site maintenance materials.</p>
-                        </div>
-                        <div class="feature">
-                            <h4><i class="fas fa-check-circle"></i> Quality Assurance</h4>
-                            <p>All products are certified and regularly tested to ensure they meet the highest safety standards and regulatory requirements.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="service-benefits">
-                    <h3>Benefits</h3>
-                    <ul>
-                        <li><i class="fas fa-shield-alt"></i> Enhanced site safety and compliance</li>
-                        <li><i class="fas fa-clock"></i> Reduced downtime with reliable supply chain</li>
-                        <li><i class="fas fa-tags"></i> Competitive pricing with bulk discounts</li>
-                        <li><i class="fas fa-truck"></i> Scheduled deliveries to maintain inventory</li>
-                        <li><i class="fas fa-headset"></i> Dedicated account management</li>
-                    </ul>
-                </div>
+            <div class="service-title">
+                <h2>Mining & Industrial Supplies</h2>
+                <p>Compliant safety equipment and essential site consumables</p>
             </div>
         </div>
-    </section>
-
-    <!-- Logistics Services -->
-    <section class="service-detail alt" id="logistics">
-        <div class="container">
-            <div class="service-header">
-                <div class="service-icon large">
-                    <i class="fas fa-truck-moving"></i>
-                </div>
-                <div class="service-title">
-                    <h2>Logistics Services</h2>
-                    <p>Reliable transportation and delivery solutions</p>
-                </div>
-            </div>
-            <div class="service-content">
-                <div class="service-description">
-                    <h3>Efficient Logistics Management</h3>
-                    <p>Our logistics services ensure timely and secure transportation of goods, materials, and equipment to support operational continuity across various project requirements.</p>
-                    
-                    <div class="service-features">
-                        <div class="feature">
-                            <h4><i class="fas fa-check-circle"></i> Transportation Services</h4>
-                            <p>Comprehensive transport solutions for goods, materials, and equipment using our modern fleet of vehicles.</p>
-                        </div>
-                        <div class="feature">
-                            <h4><i class="fas fa-check-circle"></i> Project Logistics</h4>
-                            <p>Tailored logistics support for specific project requirements including site-to-site and long-distance deliveries.</p>
-                        </div>
-                        <div class="feature">
-                            <h4><i class="fas fa-check-circle"></i> Ad Hoc Support</h4>
-                            <p>Flexible logistics solutions for urgent or unexpected delivery requirements to keep your project on schedule.</p>
-                        </div>
-                        <div class="feature">
-                            <h4><i class="fas fa-check-circle"></i> Tracking & Reporting</h4>
-                            <p>Real-time tracking of shipments with detailed reporting for complete transparency and planning.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="service-benefits">
-                    <h3>Benefits</h3>
-                    <ul>
-                        <li><i class="fas fa-road"></i> Nationwide coverage across South Africa</li>
-                        <li><i class="fas fa-calendar-check"></i> Scheduled and on-demand deliveries</li>
-                        <li><i class="fas fa-lock"></i> Secure transportation with insurance</li>
-                        <li><i class="fas fa-map-marked-alt"></i> Remote site accessibility</li>
-                        <li><i class="fas fa-chart-line"></i> Cost-effective logistics solutions</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Equipment Rentals -->
-    <section class="service-detail" id="rentals">
-        <div class="container">
-            <div class="service-header">
-                <div class="service-icon large">
-                    <i class="fas fa-tools"></i>
-                </div>
-                <div class="service-title">
-                    <h2>Equipment & Site Services Rentals</h2>
-                    <p>Flexible rental solutions for short and long-term needs</p>
-                </div>
-            </div>
-            <div class="service-content">
-                <div class="service-description">
-                    <h3>Comprehensive Rental Solutions</h3>
-                    <p>We provide flexible rental solutions designed to support both short-term and long-term site operations with well-maintained, reliable equipment.</p>
-                    
-                    <div class="rental-grid">
-                        <div class="rental-item">
-                            <h4><i class="fas fa-toilet"></i> Mobile Sanitation</h4>
-                            <p>Hygiene units, mobile toilets, and washing facilities for remote sites and construction projects.</p>
-                        </div>
-                        <div class="rental-item">
-                            <h4><i class="fas fa-lightbulb"></i> Lighting Solutions</h4>
-                            <p>Lighting plants, tower lights, and portable lighting for night operations and remote locations.</p>
-                        </div>
-                        <div class="rental-item">
-                            <h4><i class="fas fa-bolt"></i> Power Generation</h4>
-                            <p>Generators and temporary power solutions from 5kVA to 500kVA for various power requirements.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="service-benefits">
-                    <h3>Rental Benefits</h3>
-                    <ul>
-                        <li><i class="fas fa-wrench"></i> Well-maintained, reliable equipment</li>
-                        <li><i class="fas fa-clock"></i> 24/7 emergency support</li>
-                        <li><i class="fas fa-calculator"></i> Flexible rental terms (daily/weekly/monthly)</li>
-                        <li><i class="fas fa-truck"></i> Delivery, setup, and collection included</li>
-                        <li><i class="fas fa-shield-alt"></i> Regular maintenance and safety checks</li>
-                    </ul>
-                    <div class="cta-box">
-                        <h4>Need Equipment?</h4>
-                        <p>Contact us for availability and pricing</p>
-                        <a href="contact.html" class="btn">Request a Quote</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Service CTA -->
-    <section class="service-cta">
-        <div class="container">
-            <h2>Custom Solutions for Your Project</h2>
-            <p>Every project is unique. Contact us to discuss your specific requirements and receive a tailored solution.</p>
-            <div class="cta-buttons">
-                <a href="contact.html" class="btn">Get a Custom Quote</a>
-                <a href="tel:0674031185" class="btn btn-outline">Call Now: 067 403 1185</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <img src="logo.png" alt="Sarah M Projects (Pty) Ltd Logo" class="footer-logo-img">
-                <p>Supplies, Logistics & Equipment Rentals</p>
-                <p style="font-size: 0.85rem; margin-top: 10px; opacity: 0.8;">Sarah M Projects (Pty) Ltd – A Registered Private Company in South Africa</p>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="#supplies">Industrial Supplies</a></li>
-                    <li><a href="#logistics">Logistics Services</a></li>
-                    <li><a href="#rentals">Equipment Rentals</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <p><i class="fas fa-phone"></i> <a href="tel:0674031185">067 403 1185</a></p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:sarahmprojects.inquiries@gmail.com">sarahmprojects.inquiries@gmail.com</a></p>
-                <p><i class="fas fa-map-marker-alt"></i> South Africa</p>
-                <p><i class="fas fa-globe"></i> <a href="https://sarahmprojects.co.za" target="_blank">sarahmprojects.co.za</a></p>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; <span id="currentYear">2026</span> Sarah M Projects (Pty) Ltd. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-    <script>
-        // Hide the services navigation when scrolling down
-        document.addEventListener('DOMContentLoaded', function() {
-            const servicesNav = document.getElementById('servicesNav');
-            const pageBanner = document.querySelector('.page-banner');
-            
-            if (servicesNav && pageBanner) {
-                // Get the bottom position of the page banner
-                const bannerBottom = pageBanner.offsetTop + pageBanner.offsetHeight;
+        <div class="service-content">
+            <div class="service-description">
+                <h3>Comprehensive Supply Solutions</h3>
+                <p>We supply a wide range of essential mine and site consumables that meet industry safety standards and operational requirements. All our products are sourced from reputable manufacturers and comply with South African safety regulations.</p>
                 
-                window.addEventListener('scroll', function() {
-                    // If scrolled past the banner, hide the navigation
-                    if (window.scrollY > bannerBottom - 100) {
-                        servicesNav.classList.add('hidden');
-                    } else {
-                        servicesNav.classList.remove('hidden');
-                    }
-                });
-            }
+                <div class="service-features">
+                    <div class="feature">
+                        <h4><i class="fas fa-check-circle"></i> Personal Protective Equipment (PPE)</h4>
+                        <p>Complete range of safety gear including helmets, goggles, ear protection, respirators, and fall protection equipment.</p>
+                    </div>
+                    <div class="feature">
+                        <h4><i class="fas fa-check-circle"></i> Safety Footwear & Workwear</h4>
+                        <p>Industrial-grade gumboots, safety shoes, protective clothing, hi-vis vests, and specialized workwear for various environments.</p>
+                    </div>
+                    <div class="feature">
+                        <h4><i class="fas fa-check-circle"></i> Site Consumables</h4>
+                        <p>Essential supplies including safety signage, barriers, first aid kits, fire extinguishers, and general site maintenance materials.</p>
+                    </div>
+                    <div class="feature">
+                        <h4><i class="fas fa-check-circle"></i> Quality Assurance</h4>
+                        <p>All products are certified and regularly tested to ensure they meet the highest safety standards and regulatory requirements.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="service-benefits">
+                <h3>Benefits</h3>
+                <ul>
+                    <li><i class="fas fa-shield-alt"></i> Enhanced site safety and compliance</li>
+                    <li><i class="fas fa-clock"></i> Reduced downtime with reliable supply chain</li>
+                    <li><i class="fas fa-tags"></i> Competitive pricing with bulk discounts</li>
+                    <li><i class="fas fa-truck"></i> Scheduled deliveries to maintain inventory</li>
+                    <li><i class="fas fa-headset"></i> Dedicated account management</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="service-detail alt" id="logistics">
+    <div class="container">
+        <div class="service-header">
+            <div class="service-icon large">
+                <i class="fas fa-truck-moving"></i>
+            </div>
+            <div class="service-title">
+                <h2>Logistics Services</h2>
+                <p>Reliable transportation and delivery solutions</p>
+            </div>
+        </div>
+        <div class="service-content">
+            <div class="service-description">
+                <h3>Efficient Logistics Management</h3>
+                <p>Our logistics services ensure timely and secure transportation of goods, materials, and equipment to support operational continuity across various project requirements.</p>
+                
+                <div class="service-features">
+                    <div class="feature">
+                        <h4><i class="fas fa-check-circle"></i> Transportation Services</h4>
+                        <p>Comprehensive transport solutions for goods, materials, and equipment using our modern fleet of vehicles.</p>
+                    </div>
+                    <div class="feature">
+                        <h4><i class="fas fa-check-circle"></i> Project Logistics</h4>
+                        <p>Tailored logistics support for specific project requirements including site-to-site and long-distance deliveries.</p>
+                    </div>
+                    <div class="feature">
+                        <h4><i class="fas fa-check-circle"></i> Ad Hoc Support</h4>
+                        <p>Flexible logistics solutions for urgent or unexpected delivery requirements to keep your project on schedule.</p>
+                    </div>
+                    <div class="feature">
+                        <h4><i class="fas fa-check-circle"></i> Tracking & Reporting</h4>
+                        <p>Real-time tracking of shipments with detailed reporting for complete transparency and planning.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="service-benefits">
+                <h3>Benefits</h3>
+                <ul>
+                    <li><i class="fas fa-road"></i> Nationwide coverage across South Africa</li>
+                    <li><i class="fas fa-calendar-check"></i> Scheduled and on-demand deliveries</li>
+                    <li><i class="fas fa-lock"></i> Secure transportation with insurance</li>
+                    <li><i class="fas fa-map-marked-alt"></i> Remote site accessibility</li>
+                    <li><i class="fas fa-chart-line"></i> Cost-effective logistics solutions</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="service-detail" id="rentals">
+    <div class="container">
+        <div class="service-header">
+            <div class="service-icon large">
+                <i class="fas fa-tools"></i>
+            </div>
+            <div class="service-title">
+                <h2>Equipment & Site Services Rentals</h2>
+                <p>Flexible rental solutions for short and long-term needs</p>
+            </div>
+        </div>
+        <div class="service-content">
+            <div class="service-description">
+                <h3>Comprehensive Rental Solutions</h3>
+                <p>We provide flexible rental solutions designed to support both short-term and long-term site operations with well-maintained, reliable equipment.</p>
+                
+                <div class="rental-grid">
+                    <div class="rental-item">
+                        <h4><i class="fas fa-toilet"></i> Mobile Sanitation</h4>
+                        <p>Hygiene units, mobile toilets, and washing facilities for remote sites and construction projects.</p>
+                    </div>
+                    <div class="rental-item">
+                        <h4><i class="fas fa-lightbulb"></i> Lighting Solutions</h4>
+                        <p>Lighting plants, tower lights, and portable lighting for night operations and remote locations.</p>
+                    </div>
+                    <div class="rental-item">
+                        <h4><i class="fas fa-bolt"></i> Power Generation</h4>
+                        <p>Generators and temporary power solutions from 5kVA to 500kVA for various power requirements.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="service-benefits">
+                <h3>Rental Benefits</h3>
+                <ul>
+                    <li><i class="fas fa-wrench"></i> Well-maintained, reliable equipment</li>
+                    <li><i class="fas fa-clock"></i> 24/7 emergency support</li>
+                    <li><i class="fas fa-calculator"></i> Flexible rental terms (daily/weekly/monthly)</li>
+                    <li><i class="fas fa-truck"></i> Delivery, setup, and collection included</li>
+                    <li><i class="fas fa-shield-alt"></i> Regular maintenance and safety checks</li>
+                </ul>
+                <div class="cta-box">
+                    <h4>Need Equipment?</h4>
+                    <p>Contact us for availability and pricing</p>
+                    <a href="contact.html" class="btn">Request a Quote</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="service-cta">
+    <div class="container">
+        <h2>Custom Solutions for Your Project</h2>
+        <p>Every project is unique. Contact us to discuss your specific requirements and receive a tailored solution.</p>
+        <div class="cta-buttons">
+            <a href="contact.html" class="btn">Get a Custom Quote</a>
+            <a href="tel:0674031185" class="btn btn-outline">Call Now: 067 403 1185</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container footer-grid">
+        <div class="footer-col">
+            <img src="logo.png" alt="Sarah M Projects (Pty) Ltd Logo" class="footer-logo-img">
+            <p>Supplies, Logistics & Equipment Rentals</p>
+            <p style="font-size: 0.85rem; margin-top: 10px; opacity: 0.8;">Sarah M Projects (Pty) Ltd – A Registered Private Company in South Africa</p>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+                <li><a href="#supplies">Industrial Supplies</a></li>
+                <li><a href="#logistics">Logistics Services</a></li>
+                <li><a href="#rentals">Equipment Rentals</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <p><i class="fas fa-phone"></i> <a href="tel:0674031185">067 403 1185</a></p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:sarahmprojects.inquiries@gmail.com">sarahmprojects.inquiries@gmail.com</a></p>
+            <p><i class="fas fa-map-marker-alt"></i> South Africa</p>
+            <p><i class="fas fa-globe"></i> <a href="https://sarahmprojects.co.za" target="_blank">sarahmprojects.co.za</a></p>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; <span id="currentYear">2026</span> Sarah M Projects (Pty) Ltd. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const servicesNav = document.getElementById('servicesNav');
+        const pageBanner = document.querySelector('.page-banner');
+        
+        if (servicesNav && pageBanner) {
+            const bannerBottom = pageBanner.offsetTop + pageBanner.offsetHeight;
             
-            // Set current year in footer
-            document.getElementById('currentYear').textContent = new Date().getFullYear();
-        });
-    </script>
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > bannerBottom - 100) {
+                    servicesNav.classList.add('hidden');
+                } else {
+                    servicesNav.classList.remove('hidden');
+                }
+            });
+        }
+        
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    });
+</script>
 </body>
 </html>
