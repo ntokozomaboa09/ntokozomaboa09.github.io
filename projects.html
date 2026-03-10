@@ -9,9 +9,205 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
-        .projects-section {
-            padding: 80px 20px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #000000;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid #000000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #333333;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #000000;
+        }
+
+        .btn-outline:hover {
+            background-color: #000000;
+            color: white;
+        }
+
+        header {
             background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #000000;
+            gap: 20px;
+        }
+
+        .logo-image {
+            height: 100px;
+            width: auto;
+            border-radius: 4px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            color: #000000;
+            font-weight: 700;
+        }
+
+        .logo-text span {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: #000000;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            padding: 8px 0;
+            position: relative;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: #000000;
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #000000;
+        }
+
+        .page-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 20px 120px;
+            margin-top: 130px;
+            text-align: center;
+        }
+
+        .page-banner h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .page-banner p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .projects-section {
+            padding: 100px 20px;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #000000;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #000000;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 1.2rem;
         }
         
         .projects-grid {
@@ -39,13 +235,13 @@
         .project-icon {
             background: linear-gradient(135deg, #000000, #333333);
             color: white;
-            padding: 30px;
+            padding: 40px;
             text-align: center;
-            font-size: 3rem;
+            font-size: 3.5rem;
         }
         
         .project-content {
-            padding: 25px;
+            padding: 30px;
         }
         
         .project-content h3 {
@@ -73,7 +269,7 @@
         }
         
         .approach-section {
-            padding: 80px 20px;
+            padding: 100px 20px;
             background: linear-gradient(135deg, #f5f5f5, #ffffff);
         }
         
@@ -86,7 +282,7 @@
         .approach-container h2 {
             font-size: 2.5rem;
             color: #000000;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             position: relative;
             display: inline-block;
             padding-bottom: 15px;
@@ -106,37 +302,242 @@
         .approach-container p {
             color: #666;
             line-height: 1.8;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-size: 1.1rem;
         }
         
         .approach-highlight {
             background: linear-gradient(135deg, #000000, #333333);
             color: white;
-            padding: 20px 30px;
+            padding: 25px 40px;
             border-radius: 8px;
-            margin-top: 30px;
+            margin-top: 40px;
             font-weight: 500;
+            font-size: 1.2rem;
         }
         
         .approach-highlight i {
             margin-right: 10px;
         }
-        
-        @media (max-width: 768px) {
-            .projects-grid {
-                grid-template-columns: 1fr;
+
+        footer {
+            background-color: #000000;
+            color: white;
+            padding: 70px 20px 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto 50px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+            color: #ffffff;
+        }
+
+        .footer-logo-img {
+            height: 70px;
+            width: auto;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #cccccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: #cccccc;
+            word-wrap: break-word;
+        }
+
+        .contact-info a {
+            color: #cccccc;
+            text-decoration: none;
+            word-wrap: break-word;
+        }
+
+        .contact-info a:hover {
+            color: white;
+        }
+
+        .contact-info i {
+            width: 20px;
+            color: #ffffff;
+            flex-shrink: 0;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #cccccc;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            .project-content h3 {
+            .page-banner h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: fixed;
+                top: 130px;
+                left: 0;
+                width: 100%;
+                height: calc(100vh - 130px);
+                background-color: white;
+                flex-direction: column;
+                padding: 30px 20px;
+                border-top: 1px solid #e0e0e0;
+                z-index: 1000;
+                overflow-y: auto;
+                gap: 15px;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                width: 100%;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 15px;
+                font-size: 1.2rem;
+                background: #f5f5f5;
+                border-radius: 8px;
+                text-align: center;
+            }
+            
+            nav ul li a.active {
+                background: #000000;
+                color: white;
+            }
+            
+            nav ul li a.active::after {
+                display: none;
+            }
+            
+            .logo-text h1 {
                 font-size: 1.3rem;
+            }
+            
+            .logo-text span {
+                font-size: 0.8rem;
+            }
+            
+            .logo-image {
+                height: 70px;
+            }
+            
+            .page-banner {
+                padding: 150px 15px 100px;
+                margin-top: 120px;
+            }
+            
+            .page-banner h1 {
+                font-size: 2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
             
             .approach-container h2 {
                 font-size: 2rem;
             }
+        }
+
+        @media (max-width: 600px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
             
-            .approach-container p {
+            .logo a {
+                gap: 10px;
+            }
+            
+            .logo-image {
+                height: 60px;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.1rem;
+            }
+            
+            .logo-text span {
+                font-size: 0.7rem;
+            }
+            
+            .page-banner h1 {
+                font-size: 1.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-image {
+                height: 50px;
+            }
+            
+            .logo-text h1 {
+                font-size: 1rem;
+            }
+            
+            .logo-text span {
+                font-size: 0.65rem;
+            }
+            
+            .page-banner {
+                padding: 120px 10px 70px;
+                margin-top: 100px;
+            }
+            
+            .page-banner h1 {
+                font-size: 1.3rem;
+            }
+            
+            .approach-highlight {
+                padding: 20px;
                 font-size: 1rem;
             }
         }
@@ -178,6 +579,10 @@
 
 <section class="projects-section">
     <div class="container">
+        <div class="section-title">
+            <h2>Projects We Support</h2>
+            <p>Delivering excellence across various industries</p>
+        </div>
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-icon">
@@ -238,7 +643,7 @@
         <div class="footer-col">
             <img src="logo.png" alt="Sarah M Projects (Pty) Ltd Logo" class="footer-logo-img" loading="lazy">
             <p>Supplies, Logistics & Equipment Rentals</p>
-            <p style="font-size: 0.85rem; margin-top: 10px; opacity: 0.8;">Sarah M Projects (Pty) Ltd – A Registered Private Company in South Africa</p>
+            <p style="font-size: 0.9rem; margin-top: 15px; opacity: 0.8;">Sarah M Projects (Pty) Ltd – A Registered Private Company in South Africa</p>
         </div>
         <div class="footer-col">
             <h4>Quick Links</h4>
@@ -260,10 +665,12 @@
         </div>
         <div class="footer-col">
             <h4>Contact</h4>
-            <p><i class="fas fa-phone"></i> <a href="tel:0674031185">067 403 1185</a></p>
-            <p><i class="fas fa-envelope"></i> <a href="mailto:sarahmprojects.inquiries@gmail.com">sarahmprojects.inquiries@gmail.com</a></p>
-            <p><i class="fas fa-map-marker-alt"></i> South Africa</p>
-            <p><i class="fas fa-globe"></i> <a href="https://sarahmprojects.co.za" target="_blank">sarahmprojects.co.za</a></p>
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i> <a href="tel:0674031185">067 403 1185</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:sarahmprojects.inquiries@gmail.com">sarahmprojects.inquiries@gmail.com</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> South Africa</p>
+                <p><i class="fas fa-globe"></i> <a href="https://sarahmprojects.co.za" target="_blank">sarahmprojects.co.za</a></p>
+            </div>
         </div>
     </div>
     <div class="copyright">
@@ -271,9 +678,44 @@
     </div>
 </footer>
 
-<script src="script.js" defer></script>
 <script>
     document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    
+    if (mobileMenuBtn && navMenu) {
+        mobileMenuBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navMenu.classList.toggle('show');
+            const icon = this.querySelector('i');
+            if (navMenu.classList.contains('show')) {
+                icon.className = 'fas fa-times';
+                document.body.style.overflow = 'hidden';
+            } else {
+                icon.className = 'fas fa-bars';
+                document.body.style.overflow = '';
+            }
+        });
+        
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+                mobileMenuBtn.querySelector('i').className = 'fas fa-bars';
+                document.body.style.overflow = '';
+            });
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (navMenu.classList.contains('show') && 
+                !navMenu.contains(e.target) && 
+                !mobileMenuBtn.contains(e.target)) {
+                navMenu.classList.remove('show');
+                mobileMenuBtn.querySelector('i').className = 'fas fa-bars';
+                document.body.style.overflow = '';
+            }
+        });
+    }
 </script>
 </body>
 </html>
