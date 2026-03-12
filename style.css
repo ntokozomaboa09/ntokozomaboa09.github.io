@@ -81,7 +81,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 10px;
+    padding: 10px 20px;
+    flex-wrap: wrap;
 }
 
 .logo a {
@@ -92,7 +93,12 @@ header {
 }
 
 .logo-image {
-    height: 80px;
+    height: 120px;
+    width: auto;
+    margin-right: 20px;
+    border-radius: 4px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
 .logo-image:hover {
@@ -114,7 +120,15 @@ header {
 }
 
 .mobile-menu-btn {
-    font-size: 1.4rem;
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #000000;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+    transition: transform 0.3s ease;
 }
 
 .mobile-menu-btn:hover {
@@ -1330,4 +1344,3 @@ img {
         height: -webkit-fill-available;
     }
 }
-
