@@ -4,7 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta name="google-site-verification" content="6tPPHuSCAd9Ot-m0XDj0sPAEpXNCADej4H2AqERUdjI" />
-    <title>Sarah M Projects (Pty) Ltd | Supplies, Logistics & Equipment Rentals</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Sarah M Projects (Pty) Ltd - Your trusted partner for mining supplies, PPE suppliers for mining, industrial equipment rentals, and mining logistics services in South Africa. Reliable operational support for mining, construction, and industrial projects.">
+    <meta name="keywords" content="Mining supplies South Africa, PPE suppliers for mining, Industrial equipment rentals, Mining logistics services, Construction supplies, Safety equipment, Site consumables, Equipment hire, Logistics solutions, Industrial supplies South Africa, B-BBEE compliant supplier, CIPC registered company">
+    <meta name="author" content="Sarah M Projects (Pty) Ltd">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags for Social Media -->
+    <meta property="og:title" content="Sarah M Projects (Pty) Ltd | Mining Supplies, PPE, Equipment Rentals & Logistics">
+    <meta property="og:description" content="Leading supplier of mining supplies, PPE, industrial equipment rentals and logistics services in South Africa. B-BBEE compliant and CIPC registered.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sarahmprojects.co.za">
+    <meta property="og:image" content="https://sarahmprojects.co.za/og-image.jpg">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sarah M Projects | Mining Supplies & Equipment Rentals">
+    <meta name="twitter:description" content="Reliable mining supplies, PPE, industrial equipment rentals and logistics services across South Africa.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sarahmprojects.co.za">
+    
+    <title>Sarah M Projects (Pty) Ltd | Mining Supplies, PPE, Equipment Rentals & Logistics South Africa</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
@@ -278,10 +300,98 @@
             padding-bottom: 2px;
         }
 
+        /* Why Choose Us Section - NEW */
+        .why-choose-us {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #f5f5f5, #ffffff);
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .why-choose-us h2 {
+            font-size: 2.5rem;
+            color: #000000;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .why-choose-us h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #000000;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 50px auto 0;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: #000000;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+            border-color: #000000;
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.4rem;
+            color: #000000;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .benefit-card p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .benefit-card .fa-check-circle {
+            color: #000000;
+            margin-right: 10px;
+        }
+
         /* About Preview */
         .about-preview {
             padding: 100px 20px;
-            background: linear-gradient(135deg, #f5f5f5, #ffffff);
+            background: linear-gradient(135deg, #ffffff, #f5f5f5);
             text-align: center;
         }
 
@@ -315,6 +425,13 @@
             background: white;
             border-radius: 12px;
             border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            border-color: #000000;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
 
         .stat-item h3 {
@@ -388,6 +505,12 @@
             border-radius: 8px;
             border: 1px solid #e0e0e0;
             height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .compliance-item:hover {
+            border-color: #000000;
+            background: #f0f0f0;
         }
 
         .compliance-item i {
@@ -592,6 +715,10 @@
             .hero h1 {
                 font-size: 2.8rem;
             }
+            
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
@@ -698,6 +825,10 @@
             
             .compliance-item.full-width {
                 grid-column: span 1;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -886,10 +1017,10 @@
     <div class="container header-container">
         <div class="logo">
             <a href="index.html">
-                <img src="logo.png" alt="Sarah M Projects (Pty) Ltd Logo" class="logo-image" loading="eager">
+                <img src="logo.png" alt="Sarah M Projects (Pty) Ltd - Mining Supplies, PPE & Equipment Rentals South Africa" class="logo-image" loading="eager">
                 <div class="logo-text">
                     <h1>Sarah M Projects (Pty) Ltd</h1>
-                    <span>Supplies, Logistics & Equipment Rentals</span>
+                    <span>Mining Supplies • PPE • Equipment Rentals • Logistics</span>
                 </div>
             </a>
         </div>
@@ -910,8 +1041,8 @@
 
 <section class="hero" id="home">
     <div class="container">
-        <h1>RELIABLE OPERATIONAL SUPPORT FOR MINING, CONSTRUCTION & INDUSTRIAL PROJECTS</h1>
-        <p>Sarah M Projects (Pty) Ltd delivers essential supplies, dependable logistics and flexible equipment rentals with a commitment to safety compliance, operational efficiency, and service excellence.</p>
+        <h1>RELIABLE MINING SUPPLIES, PPE & EQUIPMENT RENTALS IN SOUTH AFRICA</h1>
+        <p>Sarah M Projects (Pty) Ltd delivers essential mining supplies, compliant PPE, dependable logistics and flexible equipment rentals with a commitment to safety compliance, operational efficiency, and service excellence.</p>
         <div class="hero-buttons">
             <a href="services.html" class="btn">Our Services</a>
             <a href="contact.html" class="btn btn-outline">Get a Quote</a>
@@ -923,26 +1054,72 @@
     <div class="container">
         <div class="section-title">
             <h2>Our Core Services</h2>
-            <p>Comprehensive solutions for your project needs</p>
+            <p>Comprehensive mining supplies, PPE, logistics and equipment rental solutions</p>
         </div>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-hard-hat"></i></div>
-                <h3>Industrial Supplies</h3>
-                <p>Compliant PPE, safety equipment, and essential site consumables.</p>
+                <h3>Mining Supplies & PPE</h3>
+                <p>Compliant PPE, safety equipment, and essential site consumables for mining and industrial projects.</p>
                 <a href="services.html#supplies" class="service-link">Learn More →</a>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-truck-moving"></i></div>
-                <h3>Logistics Services</h3>
-                <p>Reliable transportation and delivery solutions.</p>
+                <h3>Mining Logistics Services</h3>
+                <p>Reliable transportation and delivery solutions for mining and construction sites nationwide.</p>
                 <a href="services.html#logistics" class="service-link">Learn More →</a>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-tools"></i></div>
-                <h3>Equipment Rentals</h3>
-                <p>Flexible rental solutions for industrial projects.</p>
+                <h3>Industrial Equipment Rentals</h3>
+                <p>Flexible rental solutions for industrial equipment including generators, lighting and sanitation units.</p>
                 <a href="services.html#rentals" class="service-link">Learn More →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NEW: Why Choose Us Section -->
+<section class="why-choose-us">
+    <div class="container">
+        <h2>Why Choose Sarah M Projects</h2>
+        <p style="color: #666; font-size: 1.2rem; max-width: 700px; margin: 0 auto;">Your trusted partner for mining supplies, PPE, equipment rentals and logistics in South Africa</p>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-truck"></i></div>
+                <h3><i class="fas fa-check-circle"></i> Reliable Supply Chain Solutions</h3>
+                <p>End-to-end supply chain management ensuring your mining and construction projects never face delays. We deliver on time, every time.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3><i class="fas fa-check-circle"></i> Safety-Compliant Equipment & PPE</h3>
+                <p>All our mining supplies and PPE meet South African safety standards and industry regulations. Your team's safety is our priority.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-map-marked-alt"></i></div>
+                <h3><i class="fas fa-check-circle"></i> Nationwide Logistics Support</h3>
+                <p>From Gauteng to Limpopo, Mpumalanga to remote mining sites - our logistics network covers all of South Africa.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-calendar-alt"></i></div>
+                <h3><i class="fas fa-check-circle"></i> Flexible Equipment Rental Options</h3>
+                <p>Daily, weekly, or monthly rentals for industrial equipment. Short-term and long-term solutions to match your project needs.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-headset"></i></div>
+                <h3><i class="fas fa-check-circle"></i> Dedicated Client Support</h3>
+                <p>Personalized account management and 24/7 support for urgent mining supplies, PPE, or equipment requirements.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-file-signature"></i></div>
+                <h3><i class="fas fa-check-circle"></i> Fully Compliant & Registered</h3>
+                <p>CIPC registered, tax compliant, and B-BBEE accredited. Your trusted partner for government and private sector projects.</p>
             </div>
         </div>
     </div>
@@ -951,7 +1128,7 @@
 <section class="about-preview">
     <div class="container">
         <h2>Trusted Partner Since 2026</h2>
-        <p>Sarah M Projects (Pty) Ltd provides reliable operational support to mining, construction, and industrial projects across South Africa.</p>
+        <p>Sarah M Projects (Pty) Ltd provides reliable mining supplies, PPE, equipment rentals, and logistics services to mining, construction, and industrial projects across South Africa.</p>
         <div class="stats">
             <div class="stat-item"><h3>Professional</h3><p>Service Excellence</p></div>
             <div class="stat-item"><h3>Reliable</h3><p>On-Time Delivery</p></div>
@@ -968,7 +1145,7 @@
             <div class="compliance-content">
                 <h2>Compliance & Registration</h2>
                 <p>Sarah M Projects (Pty) Ltd is a privately owned South African company committed to operating in full compliance with national regulatory and industry standards. The company is officially registered with the Companies and Intellectual Property Commission (CIPC) and adheres to all applicable business and safety regulations governing operations within South Africa.</p>
-                <p>We maintain strict compliance to ensure reliability, accountability, and safety across all projects we support.</p>
+                <p>We maintain strict compliance to ensure reliability, accountability, and safety across all mining supplies, PPE, and equipment rental projects we support.</p>
                 
                 <div class="compliance-list-container">
                     <div class="compliance-item">
@@ -994,7 +1171,7 @@
                 </div>
                 
                 <div class="italic-quote">
-                    Through our compliance and governance standards, Sarah M Projects (Pty) Ltd ensures that all operations are conducted responsibly while supporting the safety and efficiency of mining, construction, and industrial environments.
+                    Through our compliance and governance standards, Sarah M Projects (Pty) Ltd ensures that all mining supplies, PPE, equipment rentals and logistics operations are conducted responsibly while supporting the safety and efficiency of mining, construction, and industrial environments.
                 </div>
             </div>
             <div class="compliance-icon">
@@ -1013,17 +1190,17 @@
 
 <section class="cta">
     <div class="container">
-        <h2>Ready to Start Your Next Project?</h2>
-        <p>Contact us today for a customized quote.</p>
-        <a href="contact.html" class="btn">Contact Us</a>
+        <h2>Ready to Start Your Next Mining Project?</h2>
+        <p>Contact us today for mining supplies, PPE, equipment rentals, or logistics support.</p>
+        <a href="contact.html" class="btn">Get a Quote</a>
     </div>
 </section>
 
 <footer>
     <div class="container footer-grid">
         <div class="footer-col">
-            <img src="logo.png" alt="Sarah M Projects (Pty) Ltd Logo" class="footer-logo-img" loading="lazy">
-            <p>Supplies, Logistics & Equipment Rentals</p>
+            <img src="logo.png" alt="Sarah M Projects - Mining Supplies, PPE & Equipment Rentals South Africa" class="footer-logo-img" loading="lazy">
+            <p>Mining Supplies • PPE • Equipment Rentals • Logistics</p>
             <p style="font-size: 0.9rem; margin-top: 15px; opacity: 0.8;">Sarah M Projects (Pty) Ltd – A Registered Private Company in South Africa</p>
         </div>
         <div class="footer-col">
@@ -1037,11 +1214,11 @@
             </ul>
         </div>
         <div class="footer-col">
-            <h4>Services</h4>
+            <h4>Our Services</h4>
             <ul>
-                <li><a href="services.html#supplies">Industrial Supplies</a></li>
-                <li><a href="services.html#logistics">Logistics Services</a></li>
-                <li><a href="services.html#rentals">Equipment Rentals</a></li>
+                <li><a href="services.html#supplies">Mining Supplies & PPE</a></li>
+                <li><a href="services.html#logistics">Mining Logistics Services</a></li>
+                <li><a href="services.html#rentals">Industrial Equipment Rentals</a></li>
             </ul>
         </div>
         <div class="footer-col">
@@ -1055,7 +1232,7 @@
         </div>
     </div>
     <div class="copyright">
-        <p>&copy; <span id="currentYear">2026</span> Sarah M Projects (Pty) Ltd. All rights reserved.</p>
+        <p>&copy; <span id="currentYear">2026</span> Sarah M Projects (Pty) Ltd - Mining Supplies, PPE, Equipment Rentals & Logistics South Africa. All rights reserved.</p>
     </div>
 </footer>
 
