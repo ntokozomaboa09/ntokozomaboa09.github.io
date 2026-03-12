@@ -581,18 +581,46 @@
             }
         }
         
+        /* ===== MOBILE HEADER ADJUSTMENTS - LOGO LEFT, MENU RIGHT ===== */
         @media (max-width: 768px) {
             .mobile-menu-btn {
-                display: block;
+                display: block !important;
+            }
+            
+            .header-container {
+                padding: 8px 12px !important;
+            }
+            
+            .logo a {
+                gap: 8px !important;
+            }
+            
+            .logo-image {
+                height: 60px !important;
+                width: auto;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.1rem !important;
+                margin-bottom: 2px;
+            }
+            
+            .logo-text span {
+                font-size: 0.7rem !important;
+            }
+            
+            .mobile-menu-btn {
+                font-size: 1.3rem !important;
+                padding: 8px !important;
             }
             
             nav ul {
                 display: none;
                 position: fixed;
-                top: 130px;
+                top: 76px;
                 left: 0;
                 width: 100%;
-                height: calc(100vh - 130px);
+                height: calc(100vh - 76px);
                 background-color: white;
                 flex-direction: column;
                 padding: 30px 20px;
@@ -628,21 +656,9 @@
                 display: none;
             }
             
-            .logo-text h1 {
-                font-size: 1.3rem;
-            }
-            
-            .logo-text span {
-                font-size: 0.8rem;
-            }
-            
-            .logo-image {
-                height: 70px;
-            }
-            
             .page-banner {
                 padding: 150px 15px 100px;
-                margin-top: 120px;
+                margin-top: 76px;
             }
             
             .page-banner h1 {
@@ -687,20 +703,31 @@
                 grid-template-columns: 1fr;
             }
             
-            .logo a {
-                gap: 10px;
-            }
-            
             .logo-image {
-                height: 60px;
+                height: 55px !important;
             }
             
             .logo-text h1 {
-                font-size: 1.1rem;
+                font-size: 1rem !important;
             }
             
             .logo-text span {
-                font-size: 0.7rem;
+                font-size: 0.65rem !important;
+            }
+            
+            .mobile-menu-btn {
+                font-size: 1.2rem !important;
+                padding: 6px !important;
+            }
+            
+            nav ul {
+                top: 71px;
+                height: calc(100vh - 71px);
+            }
+            
+            .page-banner {
+                margin-top: 71px;
+                padding: 120px 15px 80px;
             }
             
             .page-banner h1 {
@@ -717,21 +744,35 @@
         }
 
         @media (max-width: 480px) {
+            .header-container {
+                padding: 5px 10px !important;
+            }
+            
             .logo-image {
-                height: 50px;
+                height: 50px !important;
             }
             
             .logo-text h1 {
-                font-size: 1rem;
+                font-size: 0.95rem !important;
             }
             
             .logo-text span {
-                font-size: 0.65rem;
+                font-size: 0.6rem !important;
+            }
+            
+            .mobile-menu-btn {
+                font-size: 1.1rem !important;
+                padding: 5px !important;
+            }
+            
+            nav ul {
+                top: 66px;
+                height: calc(100vh - 66px);
             }
             
             .page-banner {
-                padding: 120px 10px 70px;
-                margin-top: 100px;
+                margin-top: 66px;
+                padding: 100px 10px 70px;
             }
             
             .page-banner h1 {
@@ -1045,6 +1086,23 @@
             }
         });
     }
+
+    // Smooth scroll for service navigation
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const headerHeight = window.innerWidth <= 768 ? 76 : 130;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            }
+        });
+    });
 </script>
 </body>
 </html>
