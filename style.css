@@ -271,6 +271,93 @@ nav a.active::after {
     color: #333;
 }
 
+.why-choose-us {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f5f5f5, #ffffff);
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.why-choose-us h2 {
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.why-choose-us h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #000000;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 50px auto 0;
+}
+
+.benefit-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #000000;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+    border-color: #000000;
+}
+
+.benefit-icon {
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.benefit-card h3 {
+    font-size: 1.4rem;
+    color: #000000;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.benefit-card p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.benefit-card .fa-check-circle {
+    color: #000000;
+    margin-right: 10px;
+}
+
 .about-preview {
     padding: 80px 20px;
     background-color: #f5f5f5;
@@ -362,10 +449,6 @@ nav a.active::after {
 .page-banner p {
     font-size: 1.2rem;
     opacity: 0.9;
-}
-
-.contact-banner {
-    background-position: center 30%;
 }
 
 .services-nav {
@@ -848,11 +931,6 @@ nav a.active::after {
     display: block;
 }
 
-.form-note {
-    margin-top: 20px;
-    color: #666;
-}
-
 .location-section {
     padding: 60px 20px;
     background-color: #f5f5f5;
@@ -999,7 +1077,6 @@ footer {
     text-decoration: underline;
 }
 
-/* ===== MOBILE HEADER ADJUSTMENTS - UPDATED ===== */
 @media (max-width: 992px) {
     .service-content {
         grid-template-columns: 1fr;
@@ -1020,38 +1097,7 @@ footer {
 
 @media (max-width: 768px) {
     .mobile-menu-btn {
-        display: block !important;
-    }
-    
-    .header-container {
-        padding: 8px 12px !important;
-    }
-    
-    .logo a {
-        flex-direction: row;
-        align-items: center;
-        gap: 8px !important;
-    }
-    
-    .logo-image {
-        height: 60px !important;
-        width: auto;
-        margin-right: 8px;
-        margin-bottom: 0;
-    }
-    
-    .logo-text h1 {
-        font-size: 1.1rem !important;
-        margin-bottom: 2px;
-    }
-    
-    .logo-text span {
-        font-size: 0.7rem !important;
-    }
-    
-    .mobile-menu-btn {
-        font-size: 1.3rem !important;
-        padding: 8px !important;
+        display: block;
     }
     
     nav ul {
@@ -1063,11 +1109,12 @@ footer {
         height: calc(100vh - 76px);
         background-color: white;
         flex-direction: column;
-        padding: 30px 20px;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         border-top: 1px solid #e0e0e0;
         z-index: 1000;
         overflow-y: auto;
-        gap: 15px;
+        -webkit-overflow-scrolling: touch;
     }
     
     nav ul.show {
@@ -1084,13 +1131,11 @@ footer {
         display: block;
         padding: 15px;
         font-size: 1.2rem;
-        background: #f5f5f5;
-        border-radius: 8px;
-        text-align: center;
+        border-radius: 4px;
     }
     
     nav ul li a:hover {
-        background-color: #e0e0e0;
+        background-color: #f5f5f5;
     }
     
     nav ul li a.active {
@@ -1100,6 +1145,34 @@ footer {
     
     nav ul li a.active::after {
         display: none;
+    }
+    
+    .header-container {
+        padding: 8px 12px;
+    }
+    
+    .logo a {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .logo-image {
+        height: 60px;
+        margin-right: 8px;
+        margin-bottom: 0;
+    }
+    
+    .logo-text h1 {
+        font-size: 1.1rem;
+    }
+    
+    .logo-text span {
+        font-size: 0.7rem;
+    }
+    
+    .mobile-menu-btn {
+        font-size: 1.3rem;
+        padding: 8px;
     }
     
     .hero {
@@ -1219,20 +1292,20 @@ footer {
 
 @media (max-width: 600px) {
     .logo-image {
-        height: 55px !important;
+        height: 55px;
     }
     
     .logo-text h1 {
-        font-size: 1rem !important;
+        font-size: 1rem;
     }
     
     .logo-text span {
-        font-size: 0.65rem !important;
+        font-size: 0.65rem;
     }
     
     .mobile-menu-btn {
-        font-size: 1.2rem !important;
-        padding: 6px !important;
+        font-size: 1.2rem;
+        padding: 6px;
     }
     
     nav ul {
@@ -1257,29 +1330,29 @@ footer {
 
 @media (max-width: 480px) {
     .header-container {
-        padding: 5px 10px !important;
+        padding: 5px 10px;
     }
     
     .logo a {
-        gap: 5px !important;
+        gap: 5px;
     }
     
     .logo-image {
-        height: 50px !important;
+        height: 50px;
         margin-right: 5px;
     }
     
     .logo-text h1 {
-        font-size: 0.95rem !important;
+        font-size: 0.95rem;
     }
     
     .logo-text span {
-        font-size: 0.6rem !important;
+        font-size: 0.6rem;
     }
     
     .mobile-menu-btn {
-        font-size: 1.1rem !important;
-        padding: 5px !important;
+        font-size: 1.1rem;
+        padding: 5px;
     }
     
     nav ul {
@@ -1362,20 +1435,20 @@ footer {
 
 @media (max-width: 360px) {
     .logo-image {
-        height: 45px !important;
+        height: 45px;
     }
     
     .logo-text h1 {
-        font-size: 0.85rem !important;
+        font-size: 0.85rem;
     }
     
     .logo-text span {
-        font-size: 0.55rem !important;
+        font-size: 0.55rem;
     }
     
     .mobile-menu-btn {
-        font-size: 1rem !important;
-        padding: 4px !important;
+        font-size: 1rem;
+        padding: 4px;
     }
     
     nav ul {
