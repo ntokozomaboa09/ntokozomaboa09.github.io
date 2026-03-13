@@ -13,20 +13,16 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sarahmprojects.co.za/projects">
     <link rel="canonical" href="https://sarahmprojects.co.za/projects">
-    
     <link rel="icon" type="image/png" href="/logo.png">
     <link rel="shortcut icon" href="/logo.png">
     <link rel="apple-touch-icon" href="/logo.png">
-    
     <title>Our Projects | Sarah M Projects - Mining Supplies, PPE & Equipment Rentals South Africa</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Enhanced Project Cards Styling */
         .projects-section {
             background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
         }
-        
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -34,7 +30,6 @@
             max-width: 1100px;
             margin: 50px auto 0;
         }
-        
         .project-card {
             background: white;
             border-radius: 20px;
@@ -44,7 +39,6 @@
             position: relative;
             box-shadow: 0 10px 30px -15px rgba(0,0,0,0.2);
         }
-        
         .project-card::before {
             content: '';
             position: absolute;
@@ -57,17 +51,14 @@
             transition: transform 0.4s ease;
             transform-origin: left;
         }
-        
         .project-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 30px 40px -20px rgba(0,0,0,0.3);
             border-color: rgba(0,0,0,0.1);
         }
-        
         .project-card:hover::before {
             transform: scaleX(1);
         }
-        
         .project-icon {
             background: linear-gradient(135deg, #000000, #1a1a1a);
             color: white;
@@ -77,7 +68,6 @@
             position: relative;
             overflow: hidden;
         }
-        
         .project-icon::after {
             content: '';
             position: absolute;
@@ -89,27 +79,22 @@
             opacity: 0;
             transition: opacity 0.4s ease;
         }
-        
         .project-card:hover .project-icon::after {
             opacity: 1;
         }
-        
         .project-icon i {
             position: relative;
             z-index: 1;
             filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
             transition: transform 0.3s ease;
         }
-        
         .project-card:hover .project-icon i {
             transform: scale(1.1);
         }
-        
         .project-content {
             padding: 30px;
             background: white;
         }
-        
         .project-content h3 {
             font-size: 1.5rem;
             color: #000000;
@@ -118,7 +103,6 @@
             padding-bottom: 12px;
             font-weight: 700;
         }
-        
         .project-content h3::after {
             content: '';
             position: absolute;
@@ -129,22 +113,18 @@
             background: linear-gradient(90deg, #000000, #666666);
             border-radius: 2px;
         }
-        
         .project-content p {
             color: #4a5568;
             line-height: 1.7;
             margin-bottom: 0;
             font-size: 1rem;
         }
-        
-        /* Enhanced Approach Section */
         .approach-section {
             padding: 100px 20px;
             background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
             position: relative;
             overflow: hidden;
         }
-        
         .approach-section::before {
             content: '';
             position: absolute;
@@ -154,7 +134,6 @@
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
         }
-        
         .approach-section::after {
             content: '';
             position: absolute;
@@ -164,7 +143,6 @@
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
         }
-        
         .approach-container {
             max-width: 900px;
             margin: 0 auto;
@@ -172,7 +150,6 @@
             position: relative;
             z-index: 1;
         }
-        
         .approach-container h2 {
             font-size: 2.5rem;
             color: #000000;
@@ -182,7 +159,6 @@
             padding-bottom: 15px;
             font-weight: 800;
         }
-        
         .approach-container h2::after {
             content: '';
             position: absolute;
@@ -194,14 +170,12 @@
             background: linear-gradient(90deg, #000000, #666666);
             border-radius: 2px;
         }
-        
         .approach-container p {
             color: #4a5568;
             line-height: 1.9;
             margin-bottom: 25px;
             font-size: 1.15rem;
         }
-        
         .approach-highlight {
             background: linear-gradient(135deg, #000000, #1a1a1a);
             color: white;
@@ -220,49 +194,40 @@
             width: auto;
             max-width: 100%;
         }
-        
         .approach-highlight:hover {
             transform: translateY(-5px);
             box-shadow: 0 30px 50px -20px rgba(0,0,0,0.5);
             background: linear-gradient(135deg, #1a1a1a, #000000);
         }
-        
         .approach-highlight i {
             color: #ffffff;
             font-size: 1.8rem;
             filter: drop-shadow(0 2px 5px rgba(255,255,255,0.3));
         }
-        
         .approach-highlight span {
             display: inline-block;
         }
-        
         .highlight-dots {
             display: flex;
             gap: 8px;
             margin: 0 10px;
         }
-        
         .highlight-dots span {
             width: 6px;
             height: 6px;
             background: rgba(255,255,255,0.5);
             border-radius: 50%;
         }
-        
-        /* Enhanced Footer Styles (keeping your existing footer styles) */
         @media (max-width: 768px) {
             .footer-grid {
                 grid-template-columns: 1fr !important;
                 gap: 30px !important;
                 text-align: left !important;
             }
-            
             .footer-col {
                 text-align: left !important;
                 padding: 0 5px !important;
             }
-            
             .footer-col h4 {
                 font-size: 1.1rem !important;
                 margin-bottom: 15px !important;
@@ -270,7 +235,6 @@
                 position: relative !important;
                 padding-bottom: 8px !important;
             }
-            
             .footer-col h4::after {
                 content: '' !important;
                 position: absolute !important;
@@ -280,28 +244,23 @@
                 height: 2px !important;
                 background-color: #ffffff !important;
             }
-            
             .footer-logo-img {
                 height: 60px !important;
                 margin-bottom: 15px !important;
             }
-            
             .footer-col p {
                 font-size: 0.9rem !important;
                 line-height: 1.6 !important;
                 margin-bottom: 10px !important;
                 opacity: 0.9 !important;
             }
-            
             .footer-col ul {
                 list-style: none !important;
                 padding: 0 !important;
             }
-            
             .footer-col ul li {
                 margin-bottom: 10px !important;
             }
-            
             .footer-col ul li a {
                 color: #cccccc !important;
                 text-decoration: none !important;
@@ -310,12 +269,10 @@
                 display: inline-block !important;
                 padding: 2px 0 !important;
             }
-            
             .footer-col ul li a:hover {
                 color: white !important;
                 transform: translateX(5px) !important;
             }
-            
             .contact-info p {
                 display: flex !important;
                 align-items: center !important;
@@ -324,21 +281,18 @@
                 font-size: 0.9rem !important;
                 word-break: break-word !important;
             }
-            
             .contact-info i {
                 width: 20px !important;
                 color: #ffffff !important;
                 flex-shrink: 0 !important;
                 font-size: 1rem !important;
             }
-            
             .contact-info a {
                 color: #cccccc !important;
                 text-decoration: none !important;
                 word-break: break-word !important;
                 flex: 1 !important;
             }
-            
             .copyright {
                 text-align: center !important;
                 padding-top: 25px !important;
@@ -347,109 +301,86 @@
                 line-height: 1.6 !important;
                 border-top: 1px solid rgba(255,255,255,0.1) !important;
             }
-            
             .copyright p {
                 margin: 0 !important;
                 opacity: 0.8 !important;
             }
-            
             .projects-grid {
                 grid-template-columns: 1fr !important;
                 gap: 20px !important;
                 padding: 0 10px !important;
             }
-            
             .project-content {
                 padding: 25px !important;
             }
-            
             .project-content h3 {
                 font-size: 1.3rem !important;
             }
-            
             .project-content p {
                 font-size: 0.95rem !important;
             }
-            
             .approach-highlight {
                 padding: 25px 30px !important;
                 font-size: 1.1rem !important;
                 flex-wrap: wrap !important;
                 border-radius: 30px !important;
             }
-            
             .approach-highlight i {
                 font-size: 1.5rem !important;
             }
         }
-
         @media (max-width: 480px) {
             .footer-logo-img {
                 height: 50px !important;
             }
-            
             .footer-col h4 {
                 font-size: 1rem !important;
             }
-            
             .footer-col ul li a {
                 font-size: 0.85rem !important;
             }
-            
             .contact-info p {
                 font-size: 0.85rem !important;
             }
-            
             .copyright {
                 font-size: 0.8rem !important;
             }
-            
             .project-icon {
                 padding: 25px !important;
                 font-size: 3rem !important;
             }
-            
             .project-content {
                 padding: 20px !important;
             }
-            
             .project-content h3 {
                 font-size: 1.2rem !important;
             }
-            
             .project-content p {
                 font-size: 0.9rem !important;
             }
-            
             .approach-container h2 {
                 font-size: 2rem !important;
             }
-            
             .approach-container p {
                 font-size: 1rem !important;
             }
-            
             .approach-highlight {
                 padding: 20px 25px !important;
                 font-size: 1rem !important;
                 flex-direction: column !important;
                 gap: 10px !important;
             }
-            
             .highlight-dots {
                 display: none !important;
             }
         }
-
         @media (max-width: 360px) {
             .footer-col ul li a {
                 font-size: 0.8rem !important;
             }
-            
             .project-content h3 {
                 font-size: 1.1rem !important;
             }
-            
             .approach-highlight {
                 padding: 15px 20px !important;
             }
@@ -482,14 +413,12 @@
         </nav>
     </div>
 </header>
-
 <section class="page-banner">
     <div class="container">
         <h1>Our Projects</h1>
         <p>Supporting mining, construction, and industrial operations with reliable services</p>
     </div>
 </section>
-
 <section class="projects-section">
     <div class="container">
         <div class="section-title">
@@ -536,7 +465,6 @@
         </div>
     </div>
 </section>
-
 <section class="approach-section">
     <div class="container approach-container">
         <h2>Our Approach</h2>
@@ -566,7 +494,6 @@
         </div>
     </div>
 </section>
-
 <footer>
     <div class="container footer-grid">
         <div class="footer-col">
@@ -606,7 +533,6 @@
         <p>&copy; <span id="currentYear">2026</span> Sarah M Projects (Pty) Ltd - Mining Supplies, PPE, Equipment Rentals & Logistics South Africa. All rights reserved.</p>
     </div>
 </footer>
-
 <script src="script.js"></script>
 </body>
 </html>
